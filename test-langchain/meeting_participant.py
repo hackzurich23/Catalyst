@@ -1,3 +1,4 @@
+# import required modules
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
@@ -59,26 +60,28 @@ def AskToJoin():
 		'div.uArJ5e.UQuaGc.Y5sE8d.uyXBBb.xKiqt').click()
 	# Ask to join and join now buttons have same xpaths
 
-def join_meeting(mail_address, password, meeting_id):
-	# assign email id and password
 
-	# create chrome instance
-	opt = Options()
-	opt.add_argument('--disable-blink-features=AutomationControlled')
-	opt.add_argument('--start-maximized')
-	opt.add_experimental_option("prefs", {
-		"profile.default_content_setting_values.media_stream_mic": 1,
-		"profile.default_content_setting_values.media_stream_camera": 1,
-		"profile.default_content_setting_values.geolocation": 0,
-		"profile.default_content_setting_values.notifications": 1
-	})
-	driver = webdriver.Chrome(options=opt)
+# assign email id and password
+mail_address = os.getenv('SELENIUM_GMAIL')
+password = os.getenv('SELENEUM_GPASSWORD')
 
-	# login to Google account
-	Glogin(mail_address, password)
+# create chrome instance
+opt = Options()
+opt.add_argument('--disable-blink-features=AutomationControlled')
+opt.add_argument('--start-maximized')
+opt.add_experimental_option("prefs", {
+	"profile.default_content_setting_values.media_stream_mic": 1,
+	"profile.default_content_setting_values.media_stream_camera": 1,
+	"profile.default_content_setting_values.geolocation": 0,
+	"profile.default_content_setting_values.notifications": 1
+})
+driver = webdriver.Chrome(options=opt)
 
-	# go to google meet
-	driver.get('https://meet.google.com/' + meeting_id)
-	turnOffMicCam()
-	AskToJoin()
-	joinNow()
+# login to Google account
+Glogin(mail_address, password)
+
+# go to google meet
+driver.get('https://meet.google.com/xby-zehb-ncf')
+turnOffMicCam()
+# AskToJoin()
+joinNow()
