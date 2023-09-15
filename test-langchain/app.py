@@ -12,7 +12,7 @@ import uuid
 from chromadb.utils import embedding_functions
 from flask import Flask, request, jsonify
 import os
-from meeting_participant import AskToJoin
+# from meeting_participant import AskToJoin
 
 # TODO: clean the code!!!!!
 # Define global variables:
@@ -23,11 +23,14 @@ load_dotenv()
 
 # 1. Vectorise the sales response csv data
 # TODO: our extracted Q&A DB:
-loader = CSVLoader(file_path="generated_q_and_a_correct.csv")
+loader = CSVLoader(file_path="test-langchain/generated_q_and_a_correct.csv")
 documents = loader.load()
 embeddings = OpenAIEmbeddings()
 # TODO: save BD to disk or load it from disk depending on if file exists
-db = Chroma.from_documents(documents, embeddings, persist_directory="chroma_db_old_version")
+# the Chroma DB causes some troubles again so for the simplicity let's use FAISS
+# db = Chroma.from_documents(documents, embeddings, persist_directory="chroma_db_old_version")
+db = FAISS.from_documents(documents, embeddings)
+
 
 # 3. Setup LLMChain & prompts
 llm = ChatOpenAI(temperature=0, model=os.getenv('MODEL_OLD'))
@@ -116,7 +119,7 @@ def join_meeting():
     role = request.args.get('meeting-id', type=str)
     print(os.getenv('SELENIUM_GMAIL'))
     print(os.getenv('SELENEUM_GPASSWORD'))
-    AskToJoin(os.getenv('SELENIUM_GMAIL'), os.getenv('SELENEUM_GPASSWORD'))
+    # AskToJoin(os.getenv('SELENIUM_GMAIL'), os.getenv('SELENEUM_GPASSWORD'))
 
     return jsonify({'output': "did we log in???"})
 
