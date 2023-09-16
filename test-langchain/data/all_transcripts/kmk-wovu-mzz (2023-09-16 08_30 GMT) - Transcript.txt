@@ -1,0 +1,11 @@
+﻿kmk-wovu-mzz (2023-09-16 08:30 GMT) - Transcript
+Attendees
+Martin Tefra
+Transcript
+This editable transcript was computer generated and might contain errors. People can also change the text after it was created.
+Martin Tefra: Okay, so I'm trying to speak and see how Google will react to that, maybe we need some more voices. Yeah. Okay, hi This is the first time meeting you nice spot.
+Martin Tefra: What else do I have to say? Maybe they both will think Still that. It's you because we're speaking from the same account. I wonder if Google is that smart too, the thing with voice. So it just doesn't Assigning the voice to accounts. Could be, but we're doing that without Google anyways. Right, we're using a third party model, but if it is of a better quality than worse, we tested it just like this is the meeting feature, maybe it's better than the one that we saw with GCP, but our house works. Also, if we just have an MP3 file, then we can use that. So, we just know more. Do you think I should Just close it and see if the meeting will get saved. Because theoretically, we can press the button after two minutes.
+Martin Tefra: He? Better know, whatever you want, okay?
+Martin Tefra: first of all,
+Martin Tefra: my God.
+Meeting ended after 00:02:55 👋
