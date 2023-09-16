@@ -8,6 +8,7 @@ from llm import LLM
 from text2summary import Text2Summary
 from summaries2db import add_summaries_to_db
 import re
+import json
 
 
 # Define global variables:
@@ -51,7 +52,7 @@ def calculate_task():
         'output': response,
         "questions": questions,
         "answers": answers,
-        "scores": scores,
+        "scores": json.dumps(str(scores)),
         "links": [_["link"] for _ in metadata],
         "contacts": [_["contacts"] for _ in metadata],
     })

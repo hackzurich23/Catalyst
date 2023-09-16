@@ -23,5 +23,5 @@ class LLM:
         page_contents, metadata, scores = db.similarity_search(message, top_k=top_k)
         # Build the answer
         response = self.chain.run(message=message, best_practice=page_contents)
-        return response, page_contents, metadata, scores.tolist()
+        return response, page_contents, metadata, scores
     
