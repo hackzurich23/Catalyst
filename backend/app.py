@@ -3,8 +3,7 @@ from flask import Flask, request, jsonify
 import os
 from meeting_participant import launch_bot
 from faiss_db import FAISS_DB
-from data.transcripts import ALL_MEETINGS
-from data.files_data import ALL_FILES
+from data.all_files import ALL_MEETINGS, ALL_FILES
 from llm import LLM
 from text2summary import Text2Summary
 from summaries2db import add_summaries_to_db

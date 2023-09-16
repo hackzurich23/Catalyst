@@ -1,5 +1,4 @@
-from data.transcripts import Meeting
-from data.files_data import FileData
+from data.all_files import Meeting, FileData
 from faiss_db import FAISS_DB
 from text2summary import Text2Summary
 import os
