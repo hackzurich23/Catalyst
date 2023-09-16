@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Avatar } from "./Avatar";
 
 export const Header = () => {
 	return (
@@ -10,14 +11,10 @@ export const Header = () => {
 				<Link href="/">
 					<p className="title">Our Super App</p>
 				</Link>
-				<div>
-					<Link href="/upload" style={{ color: "white" }}>
-						<button className="button is-primary mr-2">
-							<p>Add files</p>
-						</button>
-					</Link>
-					<button className="button is-link">Account</button>
-				</div>
+
+				<button style={{ border: "none", backgroundColor: "transparent" }}>
+					<Avatar type={"user"} />
+				</button>
 			</div>
 		</section>
 	);

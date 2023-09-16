@@ -3,6 +3,7 @@ import React from "react";
 
 import { Input } from "./Input";
 import { IMessageElement, MessageElement } from "./MessageElement";
+import Link from "next/link";
 
 export const Chat = () => {
 	const [messages, setMessages] = React.useState<IMessageElement[]>([]);
@@ -27,7 +28,7 @@ export const Chat = () => {
 			try {
 				setMessages((prevMessages) => [...prevMessages, newMessage]);
 				setInputText("");
-				await postFackMessage();
+				await postFakeMessage();
 				scrollToBottom();
 			} catch (error) {
 				console.error("An error occurred while sending the message", error);
@@ -89,7 +90,7 @@ export const Chat = () => {
 		}
 	};
 
-	const postFackMessage = async () => {
+	const postFakeMessage = async () => {
 		try {
 			const botAnswer = {
 				answers: [
@@ -170,10 +171,23 @@ export const Chat = () => {
 					bottom: "0",
 					marginBottom: 40,
 					width: "70%",
-					height: "70%",
+					height: "75%",
 					alignSelf: "center",
 				}}
 			>
+				<div
+					style={{
+						display: "flex",
+						justifyContent: "center",
+						marginBottom: "20px",
+					}}
+				>
+					<Link href="/upload" style={{ color: "white" }}>
+						<button className="button is-link mr-2 is-light">
+							<p>Add files</p>
+						</button>
+					</Link>
+				</div>
 				<div
 					ref={messagesContainerRef} // Assign the ref to the messages container
 					style={{ flex: 1, overflowY: "scroll" }}

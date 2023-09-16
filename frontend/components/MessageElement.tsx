@@ -1,5 +1,6 @@
 import React from "react";
 import { ModalComponent } from "./Modal";
+import { Avatar } from "./Avatar";
 
 // messageOrigin can be 'user' or 'bot'
 export interface IMessageElement {
@@ -19,36 +20,41 @@ export const MessageElement = (props: IMessageElement) => {
 			className="section"
 			style={{
 				display: "flex",
-				flexDirection: "column",
 				width: "100%",
 				padding: 0,
-				alignItems: type === "user" ? "flex-end" : "flex-start",
-				backgroundColor: type === "user" ? "#f5f5f5" : "#e0e0e0",
-				borderRadius: 4,
+				backgroundColor: type === "user" ? "white" : "#e0e0e0",
+				flexDirection: type === "user" ? "row-reverse" : "row",
+				alignContent: "center",
 			}}
 		>
-			<div
-				style={{
-					width: "fit-content",
-					padding: 12,
-				}}
-			>
-				{text}
+			<div style={{ padding: 5 }}>
+				{type == "user" ? <Avatar type={"user"} /> : <Avatar type={"bot"} />}
 			</div>
-			{type == "bot" && questions && (
-				<button
-					className="button is-small"
-					style={{ marginLeft: 8, marginBottom: 4 }}
-					onClick={() => setIsOpen(true)}
+
+			<div>
+				<div
+					style={{
+						width: "fit-content",
+						padding: 12,
+					}}
 				>
-					See more
-				</button>
-			)}
-			<ModalComponent
-				isOpen={modalIsOpen}
-				setIsOpen={setIsOpen}
-				data={{ questions, answers, contacts, scores }}
-			/>
+					{text}
+				</div>
+				{type == "bot" && questions && (
+					<button
+						className="button is-small"
+						style={{ marginLeft: 8, marginBottom: 4 }}
+						onClick={() => setIsOpen(true)}
+					>
+						See more
+					</button>
+				)}
+				<ModalComponent
+					isOpen={modalIsOpen}
+					setIsOpen={setIsOpen}
+					data={{ questions, answers, contacts, scores }}
+				/>
+			</div>
 		</section>
 	);
 };

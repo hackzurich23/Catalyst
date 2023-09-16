@@ -3,7 +3,13 @@ import Modal from "react-modal";
 import styles from "./Modal.module.css";
 
 const customStyles = {
-	content: { width: "60%", height: "fit-content", margin: "auto" },
+	content: {
+		width: "60%",
+		height: "fit-content",
+		margin: "auto",
+		border: "2px solid grey",
+		borderRadius: 8,
+	},
 };
 
 interface IModal {
@@ -18,17 +24,9 @@ interface IModal {
 }
 
 export const ModalComponent = ({ isOpen, setIsOpen, data }: IModal) => {
-	let scores: number[] = [];
+	// const scores = data.scores;
+	const scores = [0.67, 0.89, 0.56, 0.78, 0.98];
 
-	try {
-		scores = JSON.parse(data.scores || "[]");
-		if (!Array.isArray(scores)) {
-			scores = []; // Handle the case where the parsed result is not an array
-		}
-	} catch (error) {
-		scores = []; // Handle JSON parsing errors
-	}
-	console.log(typeof data.scores);
 	function openModal() {
 		setIsOpen(true);
 	}
@@ -59,10 +57,9 @@ export const ModalComponent = ({ isOpen, setIsOpen, data }: IModal) => {
 					Sources:
 				</h2>
 				{data.questions?.map((question, index) => {
-					console.log(scores[index]);
 					return (
 						<div key={index} className={styles.box}>
-							<div className={styles.score}>{scores[index]}</div>
+							<div className={styles.score}>{parseInt(scores[index] * 100)}%</div>
 							<p className={styles.answer}>{data.answers?.[index]}</p>
 							<p className={styles.question}>{question}</p>
 							<div className={styles.ppl_box}>

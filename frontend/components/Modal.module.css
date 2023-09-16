@@ -32,6 +32,9 @@
 .score {
 	display: block;
 	position: absolute;
-	top: 0;
+	top: 4;
 	right: 0;
+	color: "grey";
+	font-size: 12px;
+	margin-right: 10px;
 }
