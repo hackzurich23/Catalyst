@@ -17,10 +17,14 @@ class LLM:
         self.chain = LLMChain(llm=self.llm, prompt=self.prompt)
 
 
-    def get_educated_response(self, db: FAISS_DB, message: str, top_k: int = 5):
+    def get_educated_response(self, db: FAISS_DB, message: str, top_k: int = 5, security_level: int = 2):
         """Query the database and answer the question based on the top k answers."""
         # Query the DB for similar questions.
-        page_contents, metadata, scores = db.similarity_search(message, top_k=top_k)
+        page_contents, metadata, scores = db.similarity_search(
+            message, 
+            top_k=top_k,
+            security_level=security_level,
+        )
         # Build the answer
         response = self.chain.run(message=message, best_practice=page_contents)
         return response, page_contents, metadata, scores

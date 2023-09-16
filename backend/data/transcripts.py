@@ -7,6 +7,9 @@ class Meeting:
     title: str = "No title"
     meeting_id: str = "No meeting id"
     participants: list[str] = field(default_factory=lambda: ["John Doe", "Jane Doe"])
+    security_level_0: bool = True       # Who has access to this meeting
+    security_level_1: bool = True
+    security_level_2: bool = True
 
     
 ALL_MEETINGS = [

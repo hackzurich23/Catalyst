@@ -30,6 +30,16 @@ class FAISS_DB:
         # Create a new DB if it doesn't exist.
         else:
             self.new_from_documents(docs)
+            
+
+    def _build_security_level_dict(self, security_level: int) -> dict[str, bool]:
+        """Build a dictionary of security levels."""
+        return {
+            "security_level_0": security_level >= 0,
+            "security_level_1": security_level >= 1,
+            "security_level_2": security_level >= 2,
+        }
+        
         
     def append_fact_as_document(self, facts: list[str], meeting_id=-1, meeting_participants=""):
         """Encode a fact as a document and add it to the DB."""
@@ -54,10 +64,14 @@ class FAISS_DB:
         self._add(documents)
             
             
-    def similarity_search(self, query: str, top_k: int=3):
+    def similarity_search(self, query: str, top_k: int=3, security_level: int=2):
         """General similarity search function. Returns a list of documents with metadata and scores."""
         if self.db:
-            docs_and_scores = self.db.similarity_search_with_score(query, k=top_k)
+            docs_and_scores = self.db.similarity_search_with_score(
+                query, 
+                k=top_k,
+                filter={k: v for k, v in self._build_security_level_dict(security_level).items() if v}
+            )
             page_contents = [doc.page_content for doc, score in docs_and_scores]
             metadatas = [doc.metadata for doc, score in docs_and_scores]
             scores = [score for doc, score in docs_and_scores]

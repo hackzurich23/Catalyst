@@ -55,6 +55,7 @@ def calculate_task():
         "scores": json.dumps(str(scores)),
         "links": [_["link"] for _ in metadata],
         "contacts": [_["contacts"] for _ in metadata],
+        "type": [_["type"] for _ in metadata],
     })
     return json_ret
 
