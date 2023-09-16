@@ -52,7 +52,7 @@ def calculate_task():
         'output': response,
         "questions": questions,
         "answers": answers,
-        "scores": json.dumps(str(scores)),
+        "scores": [str(_) for _ in scores],
         "links": [_["link"] for _ in metadata],
         "contacts": [_["contacts"] for _ in metadata],
         "type": [_["type"] for _ in metadata],
