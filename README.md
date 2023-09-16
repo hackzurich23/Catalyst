@@ -8,5 +8,5 @@ pip install -r requirements.txt
 
 in the root directory (in timeline):
 ```bash
-python test-langchain/app.py  
+python backend/app.py  
 ```
