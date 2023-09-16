@@ -9,8 +9,8 @@ class FileData:
     security_level_0: bool = True       # Who has access 
     security_level_1: bool = True
     security_level_2: bool = True
-    
-    
+
+
 ALL_Files = [
     FileData(
         file_path="data/files_data/3D CONCRETE PRINTING.txt",
