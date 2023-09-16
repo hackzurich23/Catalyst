@@ -5,13 +5,10 @@ import { Input } from "./Input";
 import { IMessageElement, MessageElement } from "./MessageElement";
 
 export const Chat = () => {
-	const [messages, setMessages] = React.useState<IMessageElement[]>([
-		// {
-		// 	type: "bot",
-		// 	text: "Hello, what can I do for you?",
-		// },
-	]);
+	const [messages, setMessages] = React.useState<IMessageElement[]>([]);
+
 	console.log(messages);
+
 	const [data, setData] = React.useState("");
 	const [inputText, setInputText] = React.useState("");
 
@@ -78,7 +75,6 @@ export const Chat = () => {
 			}
 
 			const botAnswer = await response.json();
-			console.log("botAnswer:", botAnswer);
 			// print new message from the bot
 			const newMessage = {
 				type: "bot",
@@ -95,28 +91,46 @@ export const Chat = () => {
 
 	const postFackMessage = async () => {
 		try {
-			const params = {
-				inputText: inputText,
+			const botAnswer = {
+				answers: [
+					"Testing how Google reacts to speaking with different voices.",
+					"He says 'my God'.",
+					"The meeting.",
+					"A model for assigning voices to accounts.",
+					"To save the meeting.",
+				],
+				contacts: [
+					["John Cena", "Jane", "Spoderman"],
+					["John Cena", "Jane", "Spoderman"],
+					["John Cena", "Jane", "Spoderman"],
+					["John Cena", "Jane", "Spoderman"],
+					["John Cena", "Jane", "Spoderman"],
+				],
+				links: [
+					"https://docs.google.com/document/d/1zCIHmP6lrKfTaMvZmKiZEivl3CBGtcBdBg3Ob3-sa4c/edit?usp=sharing",
+					"https://docs.google.com/document/d/1zCIHmP6lrKfTaMvZmKiZEivl3CBGtcBdBg3Ob3-sa4c/edit?usp=sharing",
+					"https://docs.google.com/document/d/1zCIHmP6lrKfTaMvZmKiZEivl3CBGtcBdBg3Ob3-sa4c/edit?usp=sharing",
+					"https://docs.google.com/document/d/1zCIHmP6lrKfTaMvZmKiZEivl3CBGtcBdBg3Ob3-sa4c/edit?usp=sharing",
+					"https://docs.google.com/document/d/1zCIHmP6lrKfTaMvZmKiZEivl3CBGtcBdBg3Ob3-sa4c/edit?usp=sharing",
+				],
+				output: "Hello,\n\nThank you for reaching out to us. We appreciate your interest in our company. How can I assist you today?\n\nBest regards,\n[Your Name]",
+				questions: [
+					"What is the main topic of the meeting?",
+					"What is Martin Tefra's reaction?",
+					"What are they considering closing?",
+					"What third-party model are they using?",
+					"What is the purpose of pressing the button after two minutes?",
+				],
+				scores: '"[0.46665528, 0.47757202, 0.51060057, 0.5208136, 0.5381808]"',
 			};
-
-			const response = await fetch("/api/hello", {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify(params),
-			});
-
-			if (!response.ok) {
-				throw new Error(`HTTP error! Status: ${response.status}`);
-			}
-
-			const botAnswer = await response.json();
-			console.log("botAnswer:", botAnswer);
 			// print new message from the bot
 			const newMessage = {
 				type: "bot",
 				text: botAnswer.output,
+				questions: botAnswer.questions,
+				answers: botAnswer.answers,
+				contacts: botAnswer.contacts,
+				scores: botAnswer.scores,
 			} as IMessageElement;
 
 			setMessages((prevMessages) => [...prevMessages, newMessage]);
@@ -166,7 +180,15 @@ export const Chat = () => {
 				>
 					{messages.length ? (
 						messages.map((message, index) => (
-							<MessageElement key={index} type={message.type} text={message.text} />
+							<MessageElement
+								key={index}
+								type={message.type}
+								text={message.text}
+								questions={message.questions}
+								answers={message.answers}
+								contacts={message.contacts}
+								scores={message.scores}
+							/>
 						))
 					) : (
 						<div
