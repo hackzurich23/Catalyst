@@ -14,6 +14,12 @@ from flask import Flask, request, jsonify
 import os
 from meeting_participant import launch_bot
 from prompts import BOT_SYSTEM_PROMPT
+
+from text2summary import Text2Summary
+from faiss_db import FAISS_DB
+from data.transcripts import ALL_MEETINGS
+from llm import LLM
+
 # from meeting_participant import AskToJoin
 
 # TODO: clean the code!!!!!
@@ -23,46 +29,33 @@ app = Flask(__name__)
 # Initial setup: DB & model initialization...
 load_dotenv()
 
-# 1. Vectorise the sales response csv data
+# 1. Vectorize the sales response csv data
 # TODO: our extracted Q&A DB:
-loader = CSVLoader(file_path="test-langchain/generated_q_and_a_correct.csv")
-documents = loader.load()
-embeddings = OpenAIEmbeddings()
+# loader = CSVLoader(file_path="test-langchain/generated_q_and_a_correct.csv")
+# documents = loader.load()
+# embeddings = OpenAIEmbeddings()
 # TODO: save BD to disk or load it from disk depending on if file exists
 # the Chroma DB causes some troubles again so for the simplicity let's use FAISS
 # db = Chroma.from_documents(documents, embeddings, persist_directory="chroma_db_old_version")
-db = FAISS.from_documents(documents, embeddings)
+# db = FAISS.from_documents(documents, embeddings)
+faiss_db = FAISS_DB()
 
 # 3. Setup LLMChain & prompts
-llm = ChatOpenAI(temperature=0, model=os.getenv('MODEL_OLD'))
-prompt = PromptTemplate(
-    input_variables=["message", "best_practice"],
-    template=BOT_SYSTEM_PROMPT
-)
-chain = LLMChain(llm=llm, prompt=prompt)
-
+# llm = ChatOpenAI(temperature=0, model=os.getenv('MODEL_OLD'))
+# prompt = PromptTemplate(
+#     input_variables=["message", "best_practice"],
+#     template=BOT_SYSTEM_PROMPT
+# )
+# chain = LLMChain(llm=llm, prompt=prompt)
+educated_llm = LLM()
 
 # load DB from disk
 # db = Chroma(persist_directory="chroma_db", embedding_function=embeddings)
 
-# 2. Function for similarity search
-def retrieve_info(query):
-    # similar_response = db.similarity_search(query, k=1)
-    similar_response = db.similarity_search(query)
-    page_contents_array = [doc.page_content for doc in similar_response]
-    return page_contents_array
-
-
-# 4. Retrieval augmented generation
-def generate_response(message):
-    best_practice = retrieve_info(message)
-    response = chain.run(message=message, best_practice=best_practice)
-    return response
-
 
 # 5. Build an app with streamlit
 def main():
-    app.run(debug=True, host="0.0.0.0", port=3000)
+    app.run(debug=True, host="0.0.0.0", port=3001)
     # st.set_page_config(
     #     page_title="Customer response generator", page_icon=":bird:")
     #
@@ -85,9 +78,16 @@ def calculate_task():
     task_type = request.args.get('task_type', type=str)
     message = request.args.get('message', type=str)
     # TODO: define DB depending on the user's role and define prompt depending on the task_type
-    result = generate_response(message)
+    response, education, metadata, scores = educated_llm.get_educated_response(faiss_db, message)
+    json_ret = jsonify({
+        'output': response,
+        "education": education,
+        "scores": scores,
+        "links": [_["link"] for _ in metadata],
+        "contacts": [_["contacts"] for _ in metadata],
+    })
+    return json_ret
 
-    return jsonify({'output': result})
 
 @app.route('/hello', methods=['GET'])
 def basic():
