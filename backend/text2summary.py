@@ -25,8 +25,6 @@ class Text2Summary():
             return result
     
         def remove_ending_substring(input_string, substring):
-            # regex_pattern = r'.*?' + re.escape(substring) + r'$'
-            # result = re.sub(regex_pattern, '', input_string)
             pattern = re.escape(substring) + r".*"
             result = re.sub(pattern, "", input_string)
             return result
@@ -94,7 +92,7 @@ class Text2Summary():
         return response
 
 
-
+# Testing
 if __name__ == "__main__":
     from dotenv import load_dotenv
     dir_path = os.path.dirname(os.path.realpath(__file__))

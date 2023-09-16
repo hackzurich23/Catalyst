@@ -4,11 +4,13 @@ import os
 from meeting_participant import launch_bot
 from faiss_db import FAISS_DB
 from data.transcripts import ALL_MEETINGS
+from data.files_data import ALL_FILES
 from llm import LLM
 from text2summary import Text2Summary
 from summaries2db import add_summaries_to_db
 import re
 import json
+from PyPDF2 import PdfReader
 
 
 # Define global variables:
@@ -22,7 +24,7 @@ educated_llm = LLM()
 # Add the transcripts to the DB
 extractor = Text2Summary()
 if not os.path.exists("faiss_index"):
-    add_summaries_to_db(faiss_db, extractor, ALL_MEETINGS)
+    add_summaries_to_db(faiss_db, extractor, ALL_MEETINGS, ALL_FILES)
     faiss_db.save_to_disk()
 
 def main():
@@ -72,6 +74,37 @@ def join_meeting():
     launch_bot(os.getenv('SELENIUM_GMAIL'), os.getenv('SELENEUM_GPASSWORD'), meeting_id)
 
     return jsonify({'output': "did we log in???"})
+
+
+# Add an endpoint for uploading a new pdf file
+@app.route('/upload-pdf', methods=['POST'])
+def upload_pdf():
+    # Get the file from the request
+    file = request.files['file']
+    # Save the file to the disk
+    file.save(os.path.join("data", "pdfs", file.filename))
+    # Extract the text from the pdf.
+    reader = PdfReader('example.pdf')  
+    full_text = ""
+    for page in reader.pages:
+        full_text += f"\n{page.extract_text()}"
+    # Extract the summary from the text.
+    extractor = Text2Summary()
+    summary_q_and_a = extractor.get_document_summary(full_text)
+    # Add the summary to the DB.
+    faiss_db.append_q_and_a_as_document(
+        summary_q_and_a, 
+        metadata={
+            "type": "file", 
+            "title": file.filename,
+            "department": "Uploaded Document",
+            "product": "Uploaded Document",
+            "security_level_0": True,
+            "security_level_1": True,
+            "security_level_2": True,
+        }
+    )
+    faiss_db.save_to_disk()
 
 
 if __name__ == '__main__':

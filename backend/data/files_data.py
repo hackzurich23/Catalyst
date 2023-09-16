@@ -11,7 +11,7 @@ class FileData:
     security_level_2: bool = True
 
 
-ALL_Files = [
+ALL_FILES = [
     FileData(
         file_path="data/files_data/3D CONCRETE PRINTING.txt",
         file_link="https://usa.sika.com/en/construction/concrete/3d-concrete-printing.html",
