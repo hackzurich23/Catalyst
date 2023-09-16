@@ -1,0 +1,14 @@
+.input {
+	/* light grey */
+	border: 2px solid #d3d3d3;
+	flex: 1;
+	width: 100%;
+	padding: 12px;
+	border-radius: 8px;
+	font-size: 16px;
+	outline: none;
+}
+.input:focus {
+	/* change gray */
+	border: 2px solid #5a5a5a;
+}

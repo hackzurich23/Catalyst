@@ -1,0 +1,20 @@
+/* Style for the accessibility buttons */
+.accessibility-button {
+	display: inline-block;
+	padding: 10px 20px;
+	margin: 5px;
+	border: 2px solid #ccc;
+	background-color: #fff;
+	cursor: pointer;
+	font-size: 16px;
+	outline: none;
+	border-radius: 8px;
+}
+
+.accessibility-button.active {
+	background-color: #5aa9fe; /* Change the background color for active buttons */
+	color: #fff; /* Change the text color for active buttons */
+	border-color: #5aa9fe; /* Change the border color for active buttons */
+}
+
+/* Add more styles as needed */
