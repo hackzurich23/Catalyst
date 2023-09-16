@@ -57,7 +57,7 @@ class Text2Summary():
         return response
     
     
-    def get_meeting_summary(self, text_to_summarize):
+    def get_meeting_summary(self, text_to_summarize) -> dict[str, str]:
         prompt = f"""You are given a transcript of a meeting. 
         You need to summarize the main ideas and facts from the following text delimited by
         three backticks. Rephrase each fact into a question and an answer. Save each question and answer

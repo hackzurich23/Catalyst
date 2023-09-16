@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 @dataclass
 class Meeting:
@@ -6,8 +6,8 @@ class Meeting:
     transcript_link: str
     title: str = "No title"
     meeting_id: str = "No meeting id"
-    participants: list[str] = ["John Doe", "Jane Doe"]
-    
+    participants: list[str] = field(default_factory=lambda: ["John Doe", "Jane Doe"])
+
     
 ALL_MEETINGS = [
     Meeting(
