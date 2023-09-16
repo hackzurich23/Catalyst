@@ -71,8 +71,8 @@ class Text2Summary():
         response = self._get_short_summary(prompt)
         try:
             response = json.loads(response)
-        except Exception:
-            print("ERROR MEETING SUMMARY FAILED IN JSON")
+        except Exception as e:
+            print("ERROR MEETING SUMMARY FAILED IN JSON\n", e)
             response = {"error": "Could not summarize the meeting."}
         return response    
     

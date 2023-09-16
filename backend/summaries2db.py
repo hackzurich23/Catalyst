@@ -20,6 +20,7 @@ def add_summaries_to_db(faiss_db: FAISS_DB, extractor: Text2Summary, meetings: l
 
         with open(os.path.join(dir_path, meeting.transcript_path), "r") as f:
             text = f.read()
+            print(f"Embedding meeting transcript: {meeting.title}")
             q_and_a = extractor.get_meeting_summary(text)
             faiss_db.append_q_and_a_as_document(q_and_a, metadata=metadata)
             
@@ -29,12 +30,13 @@ def add_summaries_to_db(faiss_db: FAISS_DB, extractor: Text2Summary, meetings: l
             "contacts": fd.department,
             "title": fd.product,
             "type": "file",
-            "security_level_0": meeting.security_level_0,
-            "security_level_1": meeting.security_level_1,
-            "security_level_2": meeting.security_level_2,
+            "security_level_0": fd.security_level_0,
+            "security_level_1": fd.security_level_1,
+            "security_level_2": fd.security_level_2,
         }
         with open(os.path.join(dir_path, fd.file_path), "r") as f:
             text = f.read()
+            print(f"Embedding file: {fd.product}")
             q_and_a = extractor.get_meeting_summary(text)
             faiss_db.append_q_and_a_as_document(q_and_a, metadata=metadata)
             
