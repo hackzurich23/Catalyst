@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 
 const FetchApiComponent = () => {
 	const [data, setData] = useState(null);
-	console.log("data:", data);
 
 	useEffect(() => {
 		// Define the API endpoint URL
