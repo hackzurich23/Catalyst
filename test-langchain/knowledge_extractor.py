@@ -1,3 +1,4 @@
+
 ######## MY BULLSHIT CODE #######
 # TODO: extract Q&As from the wiki files
 # Function to read the content of a text file
@@ -84,6 +85,13 @@
 #
 
 
+import csv
+from langchain.document_loaders.csv_loader import CSVLoader
+from langchain.vectorstores import FAISS
+from langchain.embeddings.openai import OpenAIEmbeddings
+import os
+from dotenv import load_dotenv
+
 def modify_csv():
     input_file = "generated_q_and_a.csv"
     output_file = "generated_q_and_a_correct.csv"
@@ -99,3 +107,15 @@ def modify_csv():
             csv_writer.writerow(row)
 
     print(f'CSV file "{input_file}" has been modified and saved as "{output_file}".')
+    
+if __name__ == "__main__":
+    # modify_csv()
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+    assert load_dotenv(dotenv_path=dir_path + "/../.env", override=True), "Could not load .env file"
+
+    OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+    loader = CSVLoader(file_path="test-langchain/generated_q_and_a_correct.csv")
+    documents = loader.load()
+    embeddings = OpenAIEmbeddings(openai_api_key=OPENAI_API_KEY)
+    db = FAISS.from_documents(documents, embeddings)
+    pass
