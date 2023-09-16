@@ -82,9 +82,11 @@ def upload_pdf():
     # Get the file from the request
     file = request.files['file']
     # Save the file to the disk
-    file.save(os.path.join("data", "pdfs", file.filename))
+    file_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "pdfs", file.filename)
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
+    file.save(file_path)
     # Extract the text from the pdf.
-    reader = PdfReader('example.pdf')  
+    reader = PdfReader(file_path)  
     full_text = ""
     for page in reader.pages:
         full_text += f"\n{page.extract_text()}"
@@ -93,7 +95,7 @@ def upload_pdf():
     summary_q_and_a = extractor.get_document_summary(full_text)
     # Add the summary to the DB.
     faiss_db.append_q_and_a_as_document(
-        summary_q_and_a, 
+        summary_q_and_a,
         metadata={
             "type": "file", 
             "title": file.filename,
@@ -105,6 +107,8 @@ def upload_pdf():
         }
     )
     faiss_db.save_to_disk()
+    
+    return jsonify({'output': "Upload successful!"})
 
 
 if __name__ == '__main__':

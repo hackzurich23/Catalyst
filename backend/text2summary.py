@@ -45,14 +45,17 @@ class Text2Summary():
 
         messages = [{"role": "user", "content": prompt}]
         openai.api_key=os.getenv('OPENAI_API_KEY')
-        response = openai.ChatCompletion.create(
-            model=model,
-            messages=messages,
-            temperature=0, # this is the degree of randomness of the model's output
-        )
+        try:
+            response = openai.ChatCompletion.create(
+                model=model,
+                messages=messages,
+                temperature=0, # this is the degree of randomness of the model's output
+            )
+        except Exception as e:
+            print(f"RECEIVED ERROR FROM OPENAI API DURING SHORT SUMMARY: \n{e}")
+            return "ERROR IN OPENAI API"
 
         response = response.choices[0].message["content"]
-
         return response
     
     
