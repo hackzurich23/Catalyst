@@ -12,7 +12,7 @@ import uuid
 from chromadb.utils import embedding_functions
 from flask import Flask, request, jsonify
 import os
-# from meeting_participant import AskToJoin
+from meeting_participant import launch_bot
 
 # TODO: clean the code!!!!!
 # Define global variables:
@@ -116,10 +116,10 @@ def basic():
 
 @app.route('/join-meeting', methods=['GET'])
 def join_meeting():
-    role = request.args.get('meeting-id', type=str)
+    meeting_id = request.args.get('meeting-id', type=str)
     print(os.getenv('SELENIUM_GMAIL'))
     print(os.getenv('SELENEUM_GPASSWORD'))
-    # AskToJoin(os.getenv('SELENIUM_GMAIL'), os.getenv('SELENEUM_GPASSWORD'))
+    launch_bot(os.getenv('SELENIUM_GMAIL'), os.getenv('SELENEUM_GPASSWORD'), meeting_id)
 
     return jsonify({'output': "did we log in???"})
 

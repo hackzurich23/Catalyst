@@ -8,3 +8,4 @@ tiktoken
 streamlit
 chromadb==0.3.25
 Flask
+selenium
