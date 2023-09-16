@@ -73,8 +73,58 @@ def AskToJoin():
     driver.implicitly_wait(10)
     driver.find_element(By.CSS_SELECTOR, 'div.uArJ5e.UQuaGc.Y5sE8d.uyXBBb.xKiqt').click()
 
+def start_recording():
+    try:
+        print("opening recording menu")
+        jsname_value = "NakZHc"
+        xpath_expression = f"//button[@jsname='{jsname_value}']"
+        button = driver.find_element(By.XPATH, xpath_expression)
+        button.click()
+        # recording_class = "VfPpkd-Bz112c-LgbsSe"
+        # recording = driver.find_element(By.CLASS_NAME, recording_class)
+        # recording.click()
+    except Exception as e:
+        print(f"Error clicking recording button: {str(e)}")
 
-# Ask to join and join now buttons have same xpaths
+    try:
+        print("starting recording modal")
+        jsname_start_value = "wcuPXe"
+        xpath_expression = f"//*[@jsname='{jsname_start_value}']"
+        button_start = driver.find_element(By.XPATH, xpath_expression)
+        button_start.click()
+    except Exception as e:
+        print(f"Error clicking recording button: {str(e)}")
+
+    try:
+        print("clicking checkbox...")
+        # checkbox_element = driver.find_element_by_id("c138")
+        # checkbox_element.click()
+        jsname_checkbox_value = "YPqjbf"
+        xpath_expression = f"//*[@jsname='{jsname_checkbox_value}']"
+        checkbox_element = driver.find_element(By.XPATH, xpath_expression)
+        checkbox_element.click()
+    except:
+        print(f"Error clicking checkbox button: {str(e)}")
+
+    try:
+        print("finalizing...")
+        jsname_finalize_value = "A0ONe"
+        xpath_expression = f"//button[@jsname='{jsname_finalize_value}']"
+        finalize_button = driver.find_element(By.XPATH, xpath_expression)
+        finalize_button.click()
+    except:
+        print(f"Error clicking finalize button: {str(e)}")
+
+    try:
+        print('accept...')
+        # jscontroller = "soHxf"
+        data_mdc_dialog_action = "A9Emjd"
+        xpath_expression = f"//button[@data-mdc-dialog-action='{data_mdc_dialog_action}']"
+        accept_button = driver.find_element(By.XPATH, xpath_expression)
+        accept_button.click()
+    except:
+        print(f"Could not accept: {str(e)}")
+
 
 
 def launch_bot(mail_address, password, meeting_id):
@@ -99,3 +149,4 @@ def launch_bot(mail_address, password, meeting_id):
     turnOffMicCam()
     # AskToJoin()
     joinNow()
+    start_recording()
