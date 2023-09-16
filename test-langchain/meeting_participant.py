@@ -36,62 +36,35 @@ def Glogin(mail_address, password):
 def turnOffMicCam():
     # turn off Microphone
     time.sleep(2)
-    driver.find_element(By.XPATH,
-                        '//*[@id="yDmH0d"]/c-wiz/div/div/div[8]/div[3]/div/div/div[2]/div/div[1]/div[1]/div[1]/div/div[4]/div[1]/div/div/div').click()
+    print("switching off micro")
+    try:
+        micro_off_class = "ZB88ed"
+        micro_off = driver.find_element(By.CLASS_NAME, micro_off_class)
+        micro_off.click()
+    except Exception as e:
+        print(f"Error clicking micro: {str(e)}")
 
-    # turn off camera
-    time.sleep(1)
-    driver.find_element(By.XPATH,
-                        '//*[@id="yDmH0d"]/c-wiz/div/div/div[8]/div[3]/div/div/div[2]/div/div[1]/div[1]/div[1]/div/div[4]/div[2]/div/div').click()
-    driver.implicitly_wait(3000)
+    print("switching off camera")
+    try:
+        camera_off_class = "GOH7Zb"
+        camera_off = driver.find_element(By.CLASS_NAME, camera_off_class)
+        camera_off.click()
+    except Exception as e:
+        print(f"Error clicking camera: {str(e)}")
+
+    driver.implicitly_wait(100)
 
 
 def joinNow():
     # Join meet
     print("in the join now function")
     try:
-        text_to_click = "Join now"
-
-        # Construct an XPath that finds any element by its innerHTML containing the specified text
-        # xpath_expression = f"//*[contains(., '{text_to_click}')]"
         jsname_value = "Qx7uuf"
         xpath_expression = f"//button[@jsname='{jsname_value}']"
-
-        # Wait until the element is clickable
-        # element = wait.until(EC.element_to_be_clickable((By.XPATH, xpath_expression)))
-        # Wait for the button to be clickable
         button = driver.find_element(By.XPATH, xpath_expression)
-        # driver.find_element(By.XPATH, "//span[contains(text(), 'Join now')]").click()
         button.click()
-
-        # button = WebDriverWait(driver, 20).until(
-        #     EC.element_to_be_clickable((By.XPATH, xpath_expression))
-        # )
-        print("we see the button on page:")
-        # print(button)
-        # Click the button
-        # actions = ActionChains(driver)
-        # actions.move_to_element(button).perform()
-        # actions.click().perform()
     except Exception as e:
-        print(f"Error clicking button: {str(e)}")
-
-    # button_1 = driver.find_element(By.CSS_SELECTOR,
-    #                                'div.uArJ5e.UQuaGc.Y5sE8d.uyXBBb.xKiqt')
-    # if button_1:
-    #     button_1.click()
-    # else:
-    #     button = driver.find_element(By.XPATH, "//span[text()='Ask to join']")
-    #     if (button):
-    #         button.click()
-    #     else:
-    #         button = driver.find_element(By.XPATH, "//span[text()='Join now']")
-    #         if (button):
-    #             button.click()
-    #         else:
-    #             button_2 = driver.find_element(By.CLASS_NAME, "VfPpkd-LgbsSe")
-    #             if (button_2):
-    #                 button_2.click()
+        print(f"Error clicking join button: {str(e)}")
 
 
 def AskToJoin():
@@ -123,6 +96,6 @@ def launch_bot(mail_address, password, meeting_id):
 
     # go to google meet
     driver.get('https://meet.google.com/' + meeting_id)
-    # turnOffMicCam()
+    turnOffMicCam()
     # AskToJoin()
     joinNow()
