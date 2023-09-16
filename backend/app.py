@@ -41,7 +41,7 @@ def calculate_task():
     questions = []
     answers = []
     for item in education:
-        question_match = re.search(r'question: (.*?)\\n', item)
+        question_match = re.search(r'question: (.*?)\n', item)
         answer_match = re.search(r'"answer": "(.*?)"', item)
         questions.append(question_match.group(1))
         answers.append(answer_match.group(1))
