@@ -8,7 +8,7 @@ export default async (req, res) => {
 		const params = {
 			message: "hello",
 		};
-		const response = await axios.get("http://localhost:3001/hello", { params });
+		const response = await axios.get("http://localhost:8080/hello", { params });
 		const data = response.data;
 
 		res.json(data);

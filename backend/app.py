@@ -28,7 +28,7 @@ if not os.path.exists("faiss_index"):
     faiss_db.save_to_disk()
 
 def main():
-    app.run(debug=True, host="0.0.0.0", port=3000)
+    app.run(debug=True, host="0.0.0.0", port=8080)
 
 # FLASK ROUTES
 @app.route('/task', methods=['GET'])

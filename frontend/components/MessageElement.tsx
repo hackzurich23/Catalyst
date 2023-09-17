@@ -1,6 +1,7 @@
 import React from "react";
 import { ModalComponent } from "./Modal";
 import { Avatar } from "./Avatar";
+import { Button } from "./Button";
 
 // messageOrigin can be 'user' or 'bot'
 export interface IMessageElement {
@@ -22,7 +23,8 @@ export const MessageElement = (props: IMessageElement) => {
 				display: "flex",
 				width: "100%",
 				padding: 0,
-				backgroundColor: type === "user" ? "white" : "#e0e0e0",
+				// margin: 8,
+				backgroundColor: type === "user" ? "white" : "#ebe8e8",
 				flexDirection: type === "user" ? "row-reverse" : "row",
 				alignContent: "center",
 			}}

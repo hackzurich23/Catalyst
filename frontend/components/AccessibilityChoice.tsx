@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "@/styles/AccessibilityChoice.css";
 
 export const AccessibilityChoice = () => {
 	// Define state variables to track the button states
@@ -14,7 +13,9 @@ export const AccessibilityChoice = () => {
 
 			{/* Button for Anyone */}
 			<button
-				className={`accessibility-button ${anyone ? "active" : ""}`}
+				className={`
+					button is-link mr-4
+				${anyone ? "is-link-light" : ""}`}
 				onClick={() => {
 					setAnyone(!anyone);
 					// Deactivate other buttons when "Anyone" is activated
@@ -28,7 +29,7 @@ export const AccessibilityChoice = () => {
 
 			{/* Button for Internal Users */}
 			<button
-				className={`accessibility-button ${internalUsers ? "active" : ""}`}
+				className={`button is-link mr-4 ${internalUsers ? "is-light" : ""}`}
 				onClick={() => {
 					setInternalUsers(!internalUsers);
 					// Deactivate "Anyone" button when "Internal Users" is activated
@@ -40,7 +41,7 @@ export const AccessibilityChoice = () => {
 
 			{/* Button for Developers */}
 			<button
-				className={`accessibility-button ${developers ? "active" : ""}`}
+				className={`button is-link mr-4 ${developers ? "is-light" : ""}`}
 				onClick={() => {
 					setDevelopers(!developers);
 				}}
@@ -50,7 +51,7 @@ export const AccessibilityChoice = () => {
 
 			{/* Button for Salespeople */}
 			<button
-				className={`accessibility-button ${salesPeople ? "active" : ""}`}
+				className={`button is-link mr-4 ${salesPeople ? "is-light" : ""}`}
 				onClick={() => {
 					setSalesPeople(!salesPeople);
 				}}
