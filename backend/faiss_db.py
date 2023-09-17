@@ -10,12 +10,17 @@ from dotenv import load_dotenv
 class FAISS_DB:
     def __init__(self):
         # Create the vector database
+        embeddings = OpenAIEmbeddings()
         if os.path.exists("faiss_index"):
-            embeddings = OpenAIEmbeddings()
             self.db = FAISS.load_local("faiss_index", embeddings)
         else:
-            self.db = None
-        
+            # self.db = FAISS.from_documents([], embeddings)
+            list_of_documents = [
+                Document(page_content="test", metadata=dict(page=1)),
+            ]
+            db = FAISS.from_documents(list_of_documents, embeddings)
+            self.db = db
+
     def save_to_disk(self):
         self.db.save_local("faiss_index")
     
@@ -24,9 +29,11 @@ class FAISS_DB:
         self.db = FAISS.from_documents(documents, embeddings)
         
     def _add(self, docs):
+        embeddings = OpenAIEmbeddings()
         # Add to the DB if it exists.
         if self.db:
-            self.db.aadd_documents(docs)
+            temp_db = FAISS.from_documents(docs, embeddings)
+            self.db.merge_from(temp_db)
         # Create a new DB if it doesn't exist.
         else:
             self.new_from_documents(docs)

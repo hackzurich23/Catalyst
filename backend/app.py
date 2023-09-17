@@ -22,7 +22,8 @@ educated_llm = LLM()
 
 # Add the transcripts to the DB
 extractor = Text2Summary()
-if not os.path.exists("faiss_index"):
+if not os.path.exists("faiss_index") or (os.path.exists("faiss_index")
+                                         and faiss_db and len(faiss_db.db.docstore._dict) <= 7):
     add_summaries_to_db(faiss_db, extractor, ALL_MEETINGS, ALL_FILES)
     faiss_db.save_to_disk()
 
