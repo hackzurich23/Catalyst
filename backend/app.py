@@ -11,6 +11,7 @@ import re
 import json
 from PyPDF2 import PdfReader
 
+ENCODING_TYPE = "q&a" # or "q&a"
 
 # Define global variables:
 app = Flask(__name__)
@@ -23,13 +24,13 @@ educated_llm = LLM()
 # Add the transcripts to the DB
 extractor = Text2Summary()
 if not os.path.exists("faiss_index"):
-    add_summaries_to_db(faiss_db, extractor, ALL_MEETINGS, ALL_FILES)
+    add_summaries_to_db(faiss_db, extractor, ALL_MEETINGS, ALL_FILES, type=ENCODING_TYPE)
     faiss_db.save_to_disk()
 
 def main():
     app.run(debug=True, host="0.0.0.0", port=3000)
 
-#     FLASK ROUTES
+# FLASK ROUTES
 @app.route('/task', methods=['GET'])
 def calculate_task():
     # Get the query parameters
@@ -40,13 +41,17 @@ def calculate_task():
     response, education, metadata, scores = educated_llm.get_educated_response(faiss_db, message, top_k=3)
     
     # Extract the questions and answers from the education strings.
-    questions = []
-    answers = []
-    for item in education:
-        question_match = re.search(r'question: (.*?)\n', item)
-        answer_match = re.search(r'"answer": "(.*?)"', item)
-        questions.append(question_match.group(1))
-        answers.append(answer_match.group(1))
+    if ENCODING_TYPE == "q&a":
+        questions = []
+        answers = []
+        for item in education:
+            question_match = re.search(r'question: (.*?)\n', item)
+            answer_match = re.search(r'"answer": "(.*?)"', item)
+            questions.append(question_match.group(1))
+            answers.append(answer_match.group(1))
+    else:
+        questions = [""]*len(education)
+        answers = education
     
     # Build the output to the frontend.
     json_ret = jsonify({

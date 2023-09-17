@@ -7,6 +7,7 @@ import openai
 import re 
 import copy
 import json
+import ast
 
 
 class Text2Summary():
@@ -59,36 +60,40 @@ class Text2Summary():
         return response
     
     
-    def get_meeting_summary(self, text_to_summarize) -> dict[str, str]:
-        prompt = f"""You are given a transcript of a meeting. 
-        You need to summarize the main ideas and facts from the following text delimited by
-        three backticks. Rephrase each fact into a question and an answer. Save each question and answer
-        as a Python dictionary where the key is the question and the value is the answer. 
+    def get_meeting_summary(self, text_to_summarize, type="q&a") -> dict[str, str]:
+        if type == "q&a":
+            parsing_type = """Rephrase each fact into a question and an answer. Save each question and answer as a Python dictionary where the key is the question and the value is the answer.""" 
+        else:
+            parsing_type = """Collect the context of each fact into the description, so that each fact is at least 100 characters long. Return the facts as a Python list of strings."""
+        
+        prompt = f"""You are given a transcript of a meeting. You need to summarize the main ideas and facts from the following text delimited by three backticks. {parsing_type}
         ```
         {self._clean_transcript(text_to_summarize)}
         ```
         """
         response = self._get_short_summary(prompt)
         try:
-            response = json.loads(response)
+            response = json.loads(response) if type == "q&a" else ast.literal_eval(response)
         except Exception as e:
             print("ERROR MEETING SUMMARY FAILED IN JSON\n", e)
             response = {"error": "Could not summarize the meeting."}
         return response    
     
     
-    def get_document_summary(self, text_to_summarize):
-        prompt = f"""You are given a document of a cement manufacturing company. 
-        You need to summarize the main ideas and facts from the following text delimited by
-        three backticks. Rephrase each fact into a question and an answer. Save each question and answer
-        as a Python dictionary where the key is the question and the value is the answer. 
+    def get_document_summary(self, text_to_summarize, type="q&a"):
+        if type == "q&a":
+            parsing_type = """Rephrase each fact into a question and an answer. Save each question and answer as a Python dictionary where the key is the question and the value is the answer.""" 
+        else:
+            parsing_type = """Collect the context of each fact into the description, so that each fact is at least 100 characters long. Return the facts as a Python list of strings."""
+        
+        prompt = f"""You are given a document of a cement manufacturing company. You need to summarize the main ideas and facts from the following text delimited by three backticks. {parsing_type}
         ```
         {text_to_summarize}
         ```
         """
         response = self._get_short_summary(prompt)
         try:
-            response = json.loads(response)
+            response = json.loads(response) if type == "q&a" else ast.literal_eval(response)
         except Exception:
             print("ERROR DOCUMENT SUMMARY FAILED IN JSON")
             response = {"error": "Could not summarize the document."}

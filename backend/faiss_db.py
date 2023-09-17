@@ -41,12 +41,12 @@ class FAISS_DB:
         }
         
         
-    def append_fact_as_document(self, facts: list[str]):
+    def append_fact_as_document(self, facts: list[str], metadata: dict=None):
         """Encode a fact as a document and add it to the DB."""
         documents = [
             Document(
                 page_content=fact, 
-                metadata={'source': 'test-langchain/generated_q_and_a_correct.csv', 'id': 5}
+                metadata=metadata if metadata else None
             )
             for fact in facts
         ]
