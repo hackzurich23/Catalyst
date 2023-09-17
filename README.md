@@ -113,7 +113,7 @@ python backend/app.py
 
 ## Deployment
 
-### Backend Deployment
+### Backend
 
 For proper deployment, follow these steps:
 
@@ -130,7 +130,7 @@ For proper deployment, follow these steps:
    python backend/app.py
    ```
 
-### Frontend Deployment
+### Frontend
 
 For proper deployment, run the following command from the ./frontend directory.
 
