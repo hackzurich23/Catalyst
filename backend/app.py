@@ -29,7 +29,7 @@ if not os.path.exists("faiss_index"):
 def main():
     app.run(debug=True, host="0.0.0.0", port=8080)
 
-#     FLASK ROUTES
+# FLASK ROUTES
 @app.route('/task', methods=['GET'])
 def calculate_task():
     # Get the query parameters
