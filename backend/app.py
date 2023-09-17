@@ -37,7 +37,7 @@ def calculate_task():
     task_type = request.args.get('task_type', type=str)
     message = request.args.get('message', type=str)
     # TODO: define DB depending on the user's role and define prompt depending on the task_type
-    response, education, metadata, scores = educated_llm.get_educated_response(faiss_db, message)
+    response, education, metadata, scores = educated_llm.get_educated_response(faiss_db, message, top_k=3)
     
     # Extract the questions and answers from the education strings.
     questions = []
@@ -53,7 +53,7 @@ def calculate_task():
         'output': response,
         "questions": questions,
         "answers": answers,
-        "scores": [str(_) for _ in scores],
+        "scores": [str(1-_) for _ in scores],
         "links": [_["link"] for _ in metadata],
         "contacts": [_["contacts"] for _ in metadata],
         "type": [_["type"] for _ in metadata],

@@ -6,6 +6,8 @@ import os
 
 def add_summaries_to_db(faiss_db: FAISS_DB, extractor: Text2Summary, meetings: list[Meeting]=[], file_data: list[FileData]=[]):
     """Populate the database with the summaries of the meetings and other files."""
+    dir_path = os.path.dirname(os.path.realpath(__file__))
+
     for meeting in meetings:
         metadata = {
             "link": meeting.transcript_link,
@@ -16,8 +18,6 @@ def add_summaries_to_db(faiss_db: FAISS_DB, extractor: Text2Summary, meetings: l
             "security_level_1": meeting.security_level_1,
             "security_level_2": meeting.security_level_2,
         }
-        dir_path = os.path.dirname(os.path.realpath(__file__))
-
         with open(os.path.join(dir_path, meeting.transcript_path), "r") as f:
             text = f.read()
             print(f"Embedding meeting transcript: {meeting.title}")

@@ -41,7 +41,7 @@ class FAISS_DB:
         }
         
         
-    def append_fact_as_document(self, facts: list[str], meeting_id=-1, meeting_participants=""):
+    def append_fact_as_document(self, facts: list[str]):
         """Encode a fact as a document and add it to the DB."""
         documents = [
             Document(
