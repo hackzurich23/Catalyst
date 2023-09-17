@@ -3,15 +3,16 @@ import React from "react";
 
 import { Input } from "./Input";
 import { IMessageElement, MessageElement } from "./MessageElement";
-import Link from "next/link";
+import { Button } from "./Button";
+import Image from "next/image";
 
 export const Chat = () => {
 	const [messages, setMessages] = React.useState<IMessageElement[]>([]);
 
-	console.log(messages);
-
 	const [data, setData] = React.useState("");
 	const [inputText, setInputText] = React.useState("");
+
+	const [loading, setLoading] = React.useState(false);
 
 	const handleInputTextChange = (e: any) => {
 		setInputText(e.target.value);
@@ -28,7 +29,7 @@ export const Chat = () => {
 			try {
 				setMessages((prevMessages) => [...prevMessages, newMessage]);
 				setInputText("");
-				await postFakeMessage();
+				await postMessage();
 				scrollToBottom();
 			} catch (error) {
 				console.error("An error occurred while sending the message", error);
@@ -59,6 +60,8 @@ export const Chat = () => {
 
 	const postMessage = async () => {
 		try {
+			setLoading(true);
+
 			const params = {
 				inputText: inputText,
 			};
@@ -80,8 +83,13 @@ export const Chat = () => {
 			const newMessage = {
 				type: "bot",
 				text: botAnswer.output,
+				questions: botAnswer.questions,
+				answers: botAnswer.answers,
+				contacts: botAnswer.contacts,
+				scores: botAnswer.scores,
 			} as IMessageElement;
 
+			setLoading(false);
 			setMessages((prevMessages) => [...prevMessages, newMessage]);
 			scrollToBottom();
 		} catch (error) {
@@ -92,6 +100,7 @@ export const Chat = () => {
 
 	const postFakeMessage = async () => {
 		try {
+			setLoading(true);
 			const botAnswer = {
 				answers: [
 					"Testing how Google reacts to speaking with different voices.",
@@ -134,8 +143,11 @@ export const Chat = () => {
 				scores: botAnswer.scores,
 			} as IMessageElement;
 
-			setMessages((prevMessages) => [...prevMessages, newMessage]);
-			scrollToBottom();
+			setTimeout(() => {
+				setLoading(false);
+				setMessages((prevMessages) => [...prevMessages, newMessage]);
+				scrollToBottom();
+			}, 2000);
 		} catch (error) {
 			console.error("An error occurred while sending the message", error);
 			throw error; // Rethrow the error to handle it in the caller (handleSendMessage)
@@ -176,44 +188,45 @@ export const Chat = () => {
 				}}
 			>
 				<div
-					style={{
-						display: "flex",
-						justifyContent: "center",
-						marginBottom: "20px",
-					}}
-				>
-					<Link href="/upload" style={{ color: "white" }}>
-						<button className="button is-link mr-2 is-light">
-							<p>Add files</p>
-						</button>
-					</Link>
-				</div>
-				<div
 					ref={messagesContainerRef} // Assign the ref to the messages container
 					style={{ flex: 1, overflowY: "scroll" }}
 				>
 					{messages.length ? (
-						messages.map((message, index) => (
-							<MessageElement
-								key={index}
-								type={message.type}
-								text={message.text}
-								questions={message.questions}
-								answers={message.answers}
-								contacts={message.contacts}
-								scores={message.scores}
-							/>
-						))
+						<>
+							{messages.map((message, index) => (
+								<MessageElement
+									key={index}
+									type={message.type}
+									text={message.text}
+									questions={message.questions}
+									answers={message.answers}
+									contacts={message.contacts}
+									scores={message.scores}
+								/>
+							))}
+							{loading && (
+								<Image
+									src="/three-dots.svg"
+									height={30}
+									width={30}
+									alt={"loading points"}
+									style={{
+										margin: "10px",
+										filter: "invert(40%) sepia(95%) saturate(2374%) hue-rotate(166deg) brightness(101%) contrast(103%)",
+									}}
+								/>
+							)}
+						</>
 					) : (
 						<div
 							style={{
-								backgroundColor: "#dbd9d9",
+								backgroundColor: "#ebe8e8",
 								height: "100%",
 								width: "100%",
 								borderRadius: 8,
 								padding: "12%",
-								// greyish background
-								// center elements horizontally and vertically
+								border: "3px solid rgb(32, 156, 238, 0.5)",
+								// #209cee",
 								display: "flex",
 								justifyContent: "space-around",
 								alignItems: "center",
@@ -229,8 +242,6 @@ export const Chat = () => {
 									display: "flex",
 									justifyContent: "space-around",
 									flexDirection: "column",
-									// border: "1px solid black",
-									// flex: 1,
 									fontSize: "20px",
 									height: "30%",
 								}}
@@ -255,20 +266,12 @@ export const Chat = () => {
 							handleInputTextChange={handleInputTextChange}
 							handleInputKeyPress={handleInputKeyPress}
 						/>
-						<button
-							className="button is-primary"
+						<Button
 							onClick={() => {
-								handleSendMessage();
+								handleInputKeyPress({ key: "Enter" });
 							}}
-							title="Send"
-							// change height of the button
-							style={{
-								height: "100%",
-								marginLeft: "10px",
-							}}
-						>
-							Send
-						</button>
+							text={"Send"}
+						></Button>
 					</div>
 				</div>
 			</div>

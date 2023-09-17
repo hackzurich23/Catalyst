@@ -8,7 +8,7 @@ export default async (req, res) => {
 		const params = {
 			message: inputText,
 		};
-		const response = await axios.get("http://localhost:3001/task", { params });
+		const response = await axios.get("http://localhost:8080/task", { params });
 		const data = response.data;
 
 		res.json(data);
