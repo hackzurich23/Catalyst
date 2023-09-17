@@ -59,6 +59,7 @@ export const Chat = () => {
 	};
 
 	const postMessage = async () => {
+		console.log("postMessage");
 		try {
 			setLoading(true);
 
@@ -79,6 +80,7 @@ export const Chat = () => {
 			}
 
 			const botAnswer = await response.json();
+			console.log("botAnswer:", botAnswer);
 			// print new message from the bot
 			const newMessage = {
 				type: "bot",
@@ -87,6 +89,7 @@ export const Chat = () => {
 				answers: botAnswer.answers,
 				contacts: botAnswer.contacts,
 				scores: botAnswer.scores,
+				links: botAnswer.links,
 			} as IMessageElement;
 
 			setLoading(false);
@@ -143,11 +146,9 @@ export const Chat = () => {
 				scores: botAnswer.scores,
 			} as IMessageElement;
 
-			setTimeout(() => {
-				setLoading(false);
-				setMessages((prevMessages) => [...prevMessages, newMessage]);
-				scrollToBottom();
-			}, 2000);
+			setLoading(false);
+			setMessages((prevMessages) => [...prevMessages, newMessage]);
+			scrollToBottom();
 		} catch (error) {
 			console.error("An error occurred while sending the message", error);
 			throw error; // Rethrow the error to handle it in the caller (handleSendMessage)
@@ -202,6 +203,7 @@ export const Chat = () => {
 									answers={message.answers}
 									contacts={message.contacts}
 									scores={message.scores}
+									links={message.links}
 								/>
 							))}
 							{loading && (
