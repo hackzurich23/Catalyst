@@ -19,13 +19,15 @@ interface IModal {
 		questions?: string[];
 		answers?: string[];
 		contacts?: string[][];
-		scores?: string;
+		scores?: string[];
+		links?: string[];
+		type?: string;
 	};
 }
 
 export const ModalComponent = ({ isOpen, setIsOpen, data }: IModal) => {
-	// const scores = data.scores;
-	const scores = [0.67, 0.89, 0.56, 0.78, 0.98];
+	const scores = data.scores;
+	console.log(data);
 
 	function openModal() {
 		setIsOpen(true);
@@ -59,26 +61,66 @@ export const ModalComponent = ({ isOpen, setIsOpen, data }: IModal) => {
 				{data.questions?.map((question, index) => {
 					return (
 						<div key={index} className={styles.box}>
-							<div className={styles.score}>
-								{/* {parseInt(scores[index] * 100)}% */}
-							</div>
+							<div className={styles.score}>{parseInt(scores[index] * 100)}%</div>
 							<p className={styles.answer}>{data.answers?.[index]}</p>
 							<p className={styles.question}>{question}</p>
-							<div className={styles.ppl_box}>
-								{/* <div className={styles.people}>People present at the meeting:</div> */}
-								{/* {data.contacts?.[index]?.map((contact, index) => (
-									<a
-										key={index}
-										href={contact}
-										target="_blank"
-										rel="noreferrer"
-										className={styles.contact}
-									>
-										{"  "}
-										{contact}
-									</a>
-								))} */}
-							</div>
+							{data.type === "meeting" ? (
+								<div className={styles.ppl_box}>
+									<div className={styles.people}>
+										People present at the meeting:
+									</div>
+									{data.contacts?.[index]?.map((contact, index) => (
+										<a
+											key={index}
+											href={contact}
+											target="_blank"
+											rel="noreferrer"
+											className={styles.contact}
+										>
+											{"  "}
+											{contact}
+										</a>
+									))}
+								</div>
+							) : (
+								<div className={styles.ppl_box}>
+									<div className={styles.people}>Files that might be useful:</div>
+									{/* Get list of links */}
+									{data.links?.map((contact, index) => (
+										<a
+											key={index}
+											href={contact}
+											target="_blank"
+											rel="noreferrer"
+											className={styles.contact}
+										>
+											{"  "}
+											{"link " + (index + 1)}
+										</a>
+									))}
+									{/* <ul>
+										{data.links?.map((contact, index) => {
+											console.log(contact);
+											return (
+												<a
+													key={index}
+													href={contact}
+													target="_blank"
+													rel="noreferrer"
+													className={styles.contact}
+												>
+													{"  "}
+													{contact}
+												</a>
+											);
+										})}
+									</ul> */}
+								</div>
+							)}
+							{/* <div className={styles.ppl_box}>
+								<div>You can find more with those links:</div>
+								{data.links}
+							</div> */}
 						</div>
 					);
 				})}

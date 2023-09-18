@@ -76,7 +76,6 @@ class Text2Summary():
             response = {"error": "Could not summarize the meeting."}
         return response    
     
-    
     def get_document_summary(self, text_to_summarize):
         prompt = f"""You are given a document of a cement manufacturing company. 
         You need to summarize the main ideas and facts from the following text delimited by
