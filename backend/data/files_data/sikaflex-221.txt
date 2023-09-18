@@ -1,0 +1,217 @@
+PRODUCT DATA SHEET
+
+Sikaflex®-221
+Multi-purpose adhesive sealant with a wide adhesion range
+TYPICAL PRODUCT DATA (FURTHER VALUES SEE SAFETY DATA SHEET)
+Chemical base
+Color (CQP001-1)
+Cure mechanism
+Density
+Non-sag properties
+Application temperature
+Skin time (CQP019-1)
+Open time (CQP526-1)
+Curing speed (CQP049-1)
+Shrinkage (CQP014-1)
+Shore A hardness (CQP023-1 / ISO 48-4)
+Tensile strength (CQP036-1 / ISO 527)
+Elongation at break (CQP036-1 / ISO 527)
+Tear propagation resistance (CQP045-1 / ISO 34)
+Service temperature (CQP513-1)
+
+1-component polyurethane
+White, aluminum gray, black, colonial white
+Moisture-curing
+depending on color 1.3 kg/l (10.8 lb/gal)
+Good
+ambient 5 ─ 40 °C (41 ─ 104 °F)
+60 minutes A
+45 minutes A
+(see diagram)
+5%
+40
+1.8 MPa (260 psi)
+500 %
+7 N/mm (40 pli)
+-50 ─ 90 °C (-58 ─ 194 °F)
+24 hours 120 °C (248 °F)
+1 hour 140 °C (284 °F)
+cartridge / unipack 12 months B
+pail / drum 6 months B
+
+Shelf life (CQP016-1)
+CQP = Corporate Quality Procedure
+
+A) 23 °C (73 °F) / 50 % r.h.
+
+B) storage below 25 °C (77 °F)
+
+DESCRIPTION
+PRODUCT BENEFITS
+Sikaflex®-221 is a multi-purpose 1-component ▪ Bonds well to a wide variety of substrates
+polyurethane adhesive / sealant that bonds ▪ Resistant to aging
+well to a wide variety of substrates like metals, ▪ Can be sanded and painted
+metal primers and paint coatings (2-component ▪ Listed under NSF/ANSI/CAN 61 ─ Drinking
+Water System Components (aluminum gray,
+systems), ceramic materials and plastics. It is
+black, and white)
+suitable for making permanent elastic seals.
+▪ Listed under NSF ─ Proprietary Substances
+and Nonfood Compounds (aluminum gray,
+black, and white)
+▪ Non-corrosive
+▪ Low odor
+
+PRODUCT DATA SHEET
+Sikaflex®-221
+Version 04.02 (04 - 2022), en_US
+012001202210001000
+
+1/2
+
+AREAS OF APPLICATION
+Sikaflex®-221 bonds well to a wide variety of
+substrates and is suitable for making permanent elastic seals . Suitable substrate materials
+are metals, metal primers and paint coatings
+(2-component systems), ceramic materials and
+plastics. It is ideally used for internal sealing
+and simple bonding applications.
+Seek manufacturer’s advice and perform tests
+on original substrates before using Sikaflex®221 on materials prone to stress cracking. This
+product is suitable for experienced professional
+users only.
+Test with actual substrates and conditions have
+to be performed to ensure adhesion and material compatibility.
+
+CURE MECHANISM
+Sikaflex®-221 cures by reaction with atmospheric moisture. At low temperatures the water content of the air is generally lower and the
+curing reaction proceeds somewhat slower (see
+diagram 1).
+
+Tooling and finishing
+Tooling and finishing must be carried out within
+the skin time of the sealant. It is recommended
+using Sika® Slick. Other finishing agents must
+be tested for suitability and compatibility prior
+the use.
+Removal
+Uncured Sikaflex®-221 can be removed from
+tools and equipment with Sika® Remover-208
+or another suitable solvent. Once cured, the
+material can only be removed mechanically.
+Hands and exposed skin have to be washed immediately using a suitable industrial hand
+cleaner and water.
+Do not use solvents on skin.
+
+Diagram 1: Curing speed for Sikaflex®-221
+
+CHEMICAL RESISTANCE
+Sikaflex®-221 is generally resistant to fresh water, seawater, diluted acids and diluted caustic
+solutions; temporarily resistant to fuels, mineral oils, vegetable and animal fats and oils; not
+resistant to organic acids, glycolic alcohol, concentrated mineral acids and caustic solutions or
+solvents.
+METHOD OF APPLICATION
+Surface Preparation
+Surfaces must be clean, dry and free from
+grease, oil and dust.
+Surface treatment depends on the specific
+nature of the substrates and is crucial for a long
+lasting bond. Suggestions for surface preparation may be found on the current edition of the
+appropriate Sika® Pre-Treatment Chart. Consider that these suggestions are based on experience and have in any case to be verified by
+tests on original substrates.
+Application
+Sikaflex®-221 can be processed between 5 °C
+and 40 °C (41 °F and 104 °F) but changes in reactivity and application properties have to be
+considered. The optimum temperature for substrate and sealant is between 15 °C and 25 °C
+(59 °C and 77 °F).
+Sikaflex®-221 can be processed with hand,
+pneumatic or electric driven piston guns as well
+as pump equipment. For advice on selecting
+and setting up a suitable pump system, contact
+the System Engineering Department of Sika Industry.
+
+PRODUCT DATA SHEET
+Sikaflex®-221
+Version 04.02 (04 - 2022), en_US
+012001202210001000
+
+2/2
+
+Overpainting
+Sikaflex®-221 can be painted after formation of
+a skin. If the paint requires a baking process,
+best performance is achieved by allowing the
+sealant to fully cure first. 1C-PUR and 2C-acrylic
+based paints are usually suitable. All paints
+have to be tested by carrying preliminary trials
+under manufacturing conditions. The elasticity
+of paints is usually lower than of sealants what
+could lead to cracking of the paint film in the
+joint area.
+
+BASIS OF PRODUCT DATA
+All technical data stated in this document are
+based on laboratory tests. Actual measured
+data may vary due to circumstances beyond
+our control.
+ENVIRONMENTAL, HEALTH AND
+SAFETY
+For further information and advice regarding
+transportation, handling, storage and disposal
+of chemical products, user should refer to the
+actual Safety Data Sheets containing physical,
+environmental, toxicological and other safety
+related data. User must read the current actual
+Safety Data Sheets before using any products.
+In case of an emergency, call CHEMTREC at 1800-424-9300, International 703-527-3887.
+
+LEGAL DISCLAIMER
+Prior to each use of any product of Sika Corporation, its subsidiaries or affiliates (“SIKA”), the
+user must always read and follow the warnings
+and instructions on the product’s most current
+product label, Product Data Sheet and Safety
+Data Sheet which are available at usa.sika.com
+or by contacting SIKA’s Technical Service Department via email at tsmh@us.sika.com.
+Nothing contained in any SIKA literature or materials relieves the user of the obligation to
+read and follow the warnings and instructions
+FURTHER INFORMATION
+The information herein is offered for general for each SIKA product as set forth in the current
+guidance only. Advice on specific applications is product label, Product Data Sheet and Safety
+available on request from the Technical Depart- Data Sheet prior to use of the SIKA product.
+SIKA warrants this product for one year from
+ment of Sika Industry.
+Copies of the following publications are avail- date of installation to be free from manufacturing defects and to meet the technical properable on request:
+ties on the current Product Data Sheet if used
+▪ Safety Data Sheets
+as directed within the product’s shelf life. User
+▪ Sika Pre-treatment Chart
+determines suitability of product for intended
+Polyurethane
+▪ General Guidelines
+use and assumes all risks. User’s and/or buyer’s
+Bonding and Sealing with Sikaflex® and sole remedy shall be limited to the purchase
+SikaTack®
+price or replacement of this product exclusive
+of any labor costs. NO OTHER WARRANTIES EXPACKAGING INFORMATION
+PRESS OR IMPLIED SHALL APPLY INCLUDING
+300 ml ANY WARRANTY OF MERCHANTABILITY OR FITCartridge
+NESS FOR A PARTICULAR PURPOSE. SIKA SHALL
+400 ml NOT BE LIABLE UNDER ANY LEGAL THEORY FOR
+Unipack
+600 ml SPECIAL OR CONSEQUENTIAL DAMAGES. SIKA
+4.5 gal (US) SHALL NOT BE RESPONSIBLE FOR THE USE OF
+Pail
+THIS PRODUCT IN A MANNER TO INFRINGE ON
+50 gal (US) ANY PATENT OR ANY OTHER INTELLECTUAL
+Drum
+PROPERTY RIGHTS HELD BY OTHERS. Sale of
+SIKA products are subject to the Terms and
+Conditions of Sale which are available at https://usa.sika.com/en/group/SikaCorp/termsandconditions.html or by calling +1 800-9337452.
+
+Sika Corporation
+30800 Stephenson Highway
+Madison Heights, MI 48071
+U.S.A.
+Telephone: +1 248-577-0020
+Email: tsmh@us.sika.com
+www.sikausa.com

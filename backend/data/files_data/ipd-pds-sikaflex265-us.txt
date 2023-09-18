@@ -1,0 +1,551 @@
+Product Data Sheet
+Version 1/15/09
+
+Sikaflex®-265
+Direct glazing adhesive for buses, trucks and rail vehicles
+Technical Product Data (typical values)
+Chemical base
+Color
+Cure mechanism
+Density (uncured)
+VOC (EPA method 24)
+Non-sag properties
+Application temperature
+1
+Tack free time
+1
+Open time
+Curing speed
+Shrinkage
+Shore A-hardness (ASTM D 2240)
+Tensile strength (ASTM D 412)
+Elongation at break (ASTM D 412)
+Tear propagation resistance (ASTM D 624)
+Tensile lap–shear strength (ASTM D 1002)
+Volume Resistivity (ASTM D 257-99)
+Service temperature
+Shelf life (storage below 77°F (25°C))
+
+permanent
+
+73°F (23°C) / 50% r.h.
+
+Description
+®
+Sikaflex -265 is a high-performance,
+elastic,
+gap-filling,
+one-part
+polyurethane adhesive that cures on
+exposure to atmospheric moisture to
+®
+form a durable elastomer. Sikaflex 265 is manufactured in accordance
+with the ISO 9001/14001 quality
+assurance system.
+
+Product Benefits
+- One-part formulation
+- Excellent working characteristics
+- Fast cure time and low odor
+- High Green Strength
+- Excellent Sag Resistance
+- Resistant to aging and weathering
+- Solvent and PVC-free
+
+Areas of Application
+®
+Sikaflex -265 is designed for direct
+glazing applications in both OEM
+and Aftermarket industries, and is
+suitable for use with mineral glassbased
+windows.
+SURFACE
+PREPARATION
+INCLUDING
+APPROVED CERAMIC FRIT ON
+WINDOW PERIMETER IS REQUIRED
+TO
+PROTECT
+AGAINST
+UV
+DEGRADATION
+OF
+ADHESIVE.
+
+Before installing laminated safety
+glass
+windshields
+incorporating
+heating elements or radio aerials in
+the PVB sandwich layer, we
+recommend that you contact Sika’s
+Technical Service Department at
+888 832-7452 for advice.
+
+Sikaflex® -265 1 / 3
+
+1)
+
+product
+
+1-C polyurethane
+Black
+Moisture Cure
+10.1 lb/gal
+0.53 lb/gal (64 g/l)
+Very Good
+50°F - 95°F (10°C - 35°C)
+45 min
+30 min
+(see diagram 1)
+<1%
+45
+870 psi
+450%
+57 pli
+650 psi
+6
+10 Wcm approx.
+-40°F-194°F (-40°C-90°C)
+9 months
+
+This product is suitable for
+experienced professional users only.
+Tests with actual substrates and
+conditions have to be performed to
+ensure adhesion and material
+compatibility.
+
+2h
+h
+
+12
+74°F / 50% r.h
+
+b
+
+8
+
+2h = height of pinch weld
+b = width of original bead
+50°F / 50% r.h
+
+4
+
+0
+
+b
+
+0
+
+Diagram 1:
+
+2
+
+4
+
+6
+10
+Time (days)
+
+Curing speed Sikaflex®-265
+
+Chemical Resistance
+®
+Sikaflex -265 is resistant to fresh
+water; aqueous, acid, neutral and
+alkaline
+chlorine-free
+cleaning
+agents; temporarily resistant to
+fuels, mineral oils, vegetable and
+animal fats and oils; not resistant to
+organic acids, concentrated mineral
+acids and caustic solutions, bleach
+or solvents. The above information
+is offered for general guidance only.
+Advice on specific applications will
+be given on request.
+Method of Application
+Surface preparation
+Surfaces must be clean, dry and
+free from all traces of grease, oil,
+wax and dust. Detailed information
+®
+on the use and application of Sika
+adhesion promoters may be found in
+the appropriate product data sheet.
+The above information is offered for
+general guidance only. Advice on
+specific applications will be given on
+request.
+Application
+Unipacs: Place sausage in the
+application gun and snip off the
+
+Figure 1:
+
+Recommended bead
+configuration
+
+Tooling and finishing
+Tooling and finishing must be
+carried out within the tack free time
+of the adhesive. We recommend the
+®
+use of Sika -Slick. Other finishing
+agents or lubricants must be tested
+for suitability/compatibility.
+Removal
+®
+Uncured Sikaflex -265 may be
+removed from tools and equipment
+®
+with Sika Remover-208, mineral
+spirits or another suitable solvent.
+Once cured, the material can only
+be removed mechanically. Hands
+and exposed skin should be washed
+immediately
+using
+a
+suitable
+industrial hand cleaner and water.
+Strictly
+follow
+solvent
+manufacturer's instructions for use
+and warnings. Do not use solvents
+on skin!
+Limitations
+Do not apply at temperatures below
+50°F (10°C) or above 95°F (35°C).
+The optimum temperature for
+substrate and adhesive is between
+59°-77°F (15°-25°C). Approximate
+drive-away times for vehicles
+following glass installation or
+replacement under optimum cure
+conditions (23°C / 50% r.h.) are as
+follows:
+buses
+and
+trucks
+(windshield) 6 hours; rail vehicles 12
+hours.
+
+- Do not apply on frozen surfaces or
+through standing water or under
+water.
+- Do not apply over silicones or in
+the presence of curing silicones.
+- Alcohol inhibits the cure of
+®
+Sikaflex -265 or any other
+polyurethane based material. Do
+®
+not allow Sikaflex -265 to contact
+alcohol and alcohol containing
+solvents during cure.
+- Do not use to bond organic glass
+(i.e. polycarbonate and acrylic).
+CAUTION: IRRITANT.
+
+Irritant;Sensitizer:
+Contains
+Polyisocyanate
+pre-polymer,
+xylene.
+May
+cause
+skin/eye/respiratory
+irritation.
+May
+cause
+skin
+and/or
+respiratory sensitization after
+prolonged or repeated contact.
+Avoid contact.
+Xylene may
+cause headaches, dizziness or
+other CNS effects; and may
+cause liver or kidney effects.
+Use
+only
+with
+adequate
+ventilation.
+Use of safety
+goggles and chemical resistant
+gloves is recommended. In case
+of exceedance of PELs, use an
+appropriate,
+properly
+fitted
+NIOSH/MSHA
+approved
+respirator.Remove contaminated
+clothing.
+HMIS
+Health
+Flammability
+Reactivity
+Personal Protection
+
+*2
+1
+0
+C
+
+First Aid Measures
+Eyes – Hold eyelids apart and flush
+thoroughly with water for 15
+minutes.
+Skin
+–
+Remove
+contaminated clothing. Wash skin
+thoroughly for 15 minutes with soap
+and water. Inhalation – Remove to
+fresh air. Ingestion – Do not induce
+vomiting. Dilute with water. Contact
+physician. In all cases contact a
+physician
+immediately
+if
+symptoms persist.
+
+Further information available at:
+www.sikaindustry.com
+
+Sika Corporation
+Industry Division
+30800 Stephenson Highway
+Madison Heights, MI 48071
+USA
+Tel. 248 577 0020
+Fax 248 577 0810
+
+Sikaflex® -265 2 / 3
+
+Thickness of cure (mm)
+
+Cure Mechanism
+®
+Sikaflex -265 cures by atmospheric
+moisture. At low temperatures the
+water content of the air is lower.
+Curing reaction proceeds at a
+slower rate (See Diagram 1).
+
+closure clip. Cut off the tip of the
+nozzle to give desired adhesive
+bead geometry. For satisfactory
+results the adhesive must be applied
+with a hand operated cartridge gun,
+piston-type
+compressed-air
+or
+battery powered gun. To ensure a
+uniform thickness of adhesive bead,
+we recommend that the adhesive be
+applied in the form of a triangular
+bead (see diagram below).
+
+Further Information
+Copies of the following publications
+are available on our website
+www.sikaindustry.com:
+-Material Safety Data Sheets
+-Product Data Sheet
+-Sika Primer Chart
+-General guidelines for bonding and
+sealing with Sika products
+In case of emergency call:
+Chemtrec:
+800-424-9300
+International: 703-527-3887
+
+Clean Up
+Use personal protective equipment
+(chemical
+resistant
+gloves/goggles/clothing).
+Without
+direct contact, remove spilled or
+excess product and place in suitable
+sealed container.
+Dispose of
+excess product and container in
+accordance
+with
+applicable
+environmental regulations.
+
+Value Basis
+All technical data stated on this
+Product Data Sheet are based on
+the results of laboratory tests only.
+Actual measured data in the field
+may vary due to site specific
+conditions which are not known to
+Sika and beyond our control.
+
+Limited Material Warranty
+SIKA warrants this product for one
+year from date of installation to be
+free from manufacturing defects and
+to meet the technical properties on
+the current Product Data Sheet if
+used as directed within shelf life.
+User determines suitability of
+product for intended use and
+assumes all risks. Buyer’s sole
+remedy shall be limited to the
+purchase price or replacement of
+product exclusive of labor or cost of
+labor. NO OTHER WARRANTIES
+IMPLIED OR EXPRESS SHALL
+APPLY
+INCLUDING
+ANY
+WARRANTY
+OF
+MERCHANTABILITY OR FITNESS
+FOR A PARTICULAR PURPOSE.
+SIKA SHALL NOT BE LIABLE
+UNDER ANY LEGAL THEORY
+FOR
+SPECIAL
+OR
+CONSEQUENTIAL
+DAMAGES.
+SIKA
+SHALL
+NOT
+BE
+RESPONSIBLE FOR THE USE OF
+THIS PRODUCT IN A MANNER TO
+INFRINGE ON ANY PATENT OR
+ANY
+OTHER
+INTELLECTUAL
+PROPERTY RIGHTS HELD BY
+OTHERS.
+
+Handling and Storage
+Avoid direct contact. Wear personal
+protective equipment (chemical
+resistant gloves/goggles/clothing) to
+prevent direct contact with skin and
+eyes. Use only in well ventilated
+areas. Open doors and windows
+during use. Use a properly fitted
+NIOSH respirator if ventilation is
+poor. Wash thoroughly with soap
+and water after use. Remove
+contaminated clothing and launder
+before reuse. Store below 77°F
+(25°C) in a cool dry place away from
+sunlight.
+
+Legal Notes/Disclaimer
+All information provided by Sika
+Corporation (“Sika”) concerning Sika
+products, including but not limited to,
+any recommendations and advice
+relating to the application and use of
+Sika products, is given in good faith
+based on Sika’s current experience
+and knowledge of its products when
+properly stored, handled and applied
+under
+normal
+conditions
+in
+accordance with Sika’s instructions.
+In practice, the differences in
+materials, substrates, storage and
+handling conditions, actual site
+
+For further information and advice
+regarding transportation, handling,
+storage and disposal of chemical
+products, users should refer to the
+actual Material Safety Data Sheets
+containing
+physical,
+ecological,
+toxicological and other safety related
+data. It is highly recommended to
+read the actual Material Safety Data
+Sheet before using the product.
+-KEEP OUT OF REACH OF CHILDREN
+-NOT FOR INTERNAL CONSUMPTION
+-FOR INDUSTRIAL USE ONLY
+-KEEP CONTAINER TIGHTLY CLOSED
+
+Packaging Information
+600 ml
+
+Sika reserves the right to change
+the properties of its products without
+notice. All sales of Sika product(s)
+are subject to its current terms and
+conditions of sale which are
+available at www.sikacorp.com or by
+calling 201-933-8800.
+Prior to each use of any Sika
+product, the user must always read
+and follow the warnings and
+instructions on the product’s most
+current Product Data Sheet, product
+label and Material Safety Data
+Sheet which are available at
+www.sikaindustry.com.
+Nothing
+contained in any Sika materials
+relieves the user of the obligation to
+read and follow the warnings and
+instruction for each Sika product as
+set forth in the current Product Data
+Sheet, product label and Material
+Safety Data Sheet prior to product
+use.
+
+Further information available at:
+www.sikaindustry.com
+
+Sika Corporation
+Industry Division
+30800 Stephenson Highway
+Madison Heights, MI 48071
+USA
+Tel. 248 577 0020
+Fax 248 577 0810
+
+Sikaflex® -265 3 / 3
+
+Unipac
+
+conditions and other factors outside
+of Sika’s control are such that Sika
+assumes no liability for the provision
+of
+such
+information,
+advice,
+recommendations or instructions
+related to its products, nor shall any
+legal relationship be created by or
+arise from the provision of such
+information,
+advice,
+recommendations or instructions
+related to its products. The user of
+the Sika product(s) must test the
+product(s) for suitability for the
+intended application and purpose
+before proceeding with the full
+application of the product(s).

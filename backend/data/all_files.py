@@ -68,4 +68,46 @@ ALL_FILES = [
         product="CarboDur Rods",
         department="Construction",
     ),
+    FileData(
+        file_path="data/files_data/FAQ",
+        file_link="https://usa.sika.com/en/industry/resource-center/faq.html",
+        product="FAQ",
+        department="Construction",
+    ),
+    FileData(
+        file_path="data/files_data/ipd-pds-sikaflex 124-us.txt",
+        file_link="https://usa.sika.com/content/dam/dms/us01/b/sika_carbodur_rods.pdf",
+        product="sikaflex-124",
+        department="Construction",
+    ),
+    FileData(
+        file_path="data/files_data/ipd-pds-sikaflex265-us.txt",
+        file_link="https://usa.sika.com/content/dam/dms/us01/2/ipd-pds-sikaflex265-us.pdf",
+        product="sikaflex-265",
+        department="Construction",
+    ),
+    FileData(
+        file_path="data/files_data/ipd-pds-sikalastomer-65-us.txt",
+        file_link="https://usa.sika.com/content/dam/dms/us01/4/ipd-pds-sikalastomer-65-us.pdf",
+        product="sikalastomer",
+        department="Construction",
+    ),
+    FileData(
+        file_path="data/files_data/SikaBiresin AP112 PDS.txt",
+        file_link="https://usa.sika.com/content/dam/dms/us01/o/SikaBiresin%20AP112%20PDS.pdf",
+        product="SikaBiresin",
+        department="Construction",
+    ),
+    FileData(
+        file_path="data/files_data/sikaflex-221.txt",
+        file_link="https://usa.sika.com/content/dam/dms/us01/b/sika_carbodur_rods.pdf",
+        product="sikaflex-221",
+        department="Construction",
+    ),
+    FileData(
+        file_path="data/files_data/sikaflex_-296.txt",
+        file_link="https://usa.sika.com/content/dam/dms/us01/c/sikaflex_-296.pdf",
+        product="sikaflex-296",
+        department="Construction",
+    ),
 ]
