@@ -143,7 +143,7 @@ export const Chat = () => {
 				questions: botAnswer.questions,
 				answers: botAnswer.answers,
 				contacts: botAnswer.contacts,
-				scores: botAnswer.scores,
+				scores: JSON.parse(botAnswer.scores), // Parse the scores string into an array
 			} as IMessageElement;
 
 			setLoading(false);
