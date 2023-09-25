@@ -3,10 +3,10 @@ This script has an extractor object that extracts the bulletpoints from the
 chat messages.
 """
 import os
-import openai
 import re 
 import copy
 import json
+import openai
 
 
 class Text2Summary():

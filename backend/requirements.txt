@@ -10,3 +10,4 @@ chromadb==0.3.25
 Flask
 selenium
 requests
+PyPDF2

@@ -1,14 +1,14 @@
-from dotenv import load_dotenv
-from flask import Flask, request, jsonify
 import os
-from meeting_participant import launch_bot
-from faiss_db import FAISS_DB
-from data.all_files import ALL_MEETINGS, ALL_FILES
-from llm import LLM
-from text2summary import Text2Summary
-from summaries2db import add_summaries_to_db
 import re
 import json
+from dotenv import load_dotenv
+from flask import Flask, request, jsonify
+from app_package.meeting_participant import launch_bot
+from app_package.faiss_db import FAISS_DB
+from app_package.data.all_files import ALL_MEETINGS, ALL_FILES
+from app_package.llm import LLM
+from app_package.text2summary import Text2Summary
+from app_package.summaries2db import add_summaries_to_db
 from PyPDF2 import PdfReader
 
 
