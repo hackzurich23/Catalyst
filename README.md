@@ -1,6 +1,6 @@
 ![logo](https://res.cloudinary.com/dohxofaxb/image/upload/v1694894880/Wiki_1920_1280_px_nyecja.png)
 
-Created during HackZurich 2023 (Sika Challenge). | [Devpost](https://devpost.com/software/timemachine-qux19t) | [Winner Photo](https://www.linkedin.com/feed/update/urn:li:activity:7110164700285296641/)
+Created during HackZurich 2023 (Sika Challenge). | [[Devpost](https://devpost.com/software/timemachine-qux19t)] | [[Winner Photo](https://www.linkedin.com/feed/update/urn:li:activity:7110164700285296641/)]
 
 # What it does
 
