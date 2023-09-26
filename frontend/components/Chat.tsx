@@ -165,8 +165,8 @@ export const Chat = () => {
 
 	const scrollToBottom = () => {
 		if (messagesContainerRef.current) {
-			const container = messagesContainerRef.current;
-			container.scrollTop = container.scrollHeight;
+		  const container: HTMLDivElement = messagesContainerRef.current; // Define the type for the container
+		  container.scrollTop = container.scrollHeight;
 		}
 	};
 
