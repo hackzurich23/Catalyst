@@ -120,7 +120,7 @@ For proper deployment, follow these steps:
 1. Activate the virtual environment (venv) with the following command:
 
    ```bash
-   cd project/timeline
+   cd project/Catalyst
    source myvenv/bin/activate
    ```
 
@@ -139,3 +139,9 @@ For proper deployment, run the following command from the ./frontend directory.
    ```
 
 The API can be accessed using the external ID of the VM followed by port `3000`.
+
+### Apache
+apache config file name:
+```bash
+/etc/apache2/sites-available/catalyst-backend.conf
+```
