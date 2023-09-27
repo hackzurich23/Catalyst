@@ -143,7 +143,7 @@ export const Chat = () => {
 				questions: botAnswer.questions,
 				answers: botAnswer.answers,
 				contacts: botAnswer.contacts,
-				scores: botAnswer.scores,
+				scores: JSON.parse(botAnswer.scores), // Parse the scores string into an array
 			} as IMessageElement;
 
 			setLoading(false);
@@ -165,8 +165,8 @@ export const Chat = () => {
 
 	const scrollToBottom = () => {
 		if (messagesContainerRef.current) {
-			const container = messagesContainerRef.current;
-			container.scrollTop = container.scrollHeight;
+		  const container: HTMLDivElement = messagesContainerRef.current; // Define the type for the container
+		  container.scrollTop = container.scrollHeight;
 		}
 	};
 

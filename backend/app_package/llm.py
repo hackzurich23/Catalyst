@@ -2,8 +2,8 @@ import os
 from langchain.prompts import PromptTemplate
 from langchain.chat_models import ChatOpenAI
 from langchain.chains import LLMChain
-from prompts import BOT_SYSTEM_PROMPT
-from faiss_db import FAISS_DB
+from app_package.prompts import BOT_SYSTEM_PROMPT
+from app_package.faiss_db import FAISS_DB
 
 
 class LLM:

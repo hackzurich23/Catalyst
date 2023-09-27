@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, RefObject } from "react";
 import { Avatar } from "./Avatar";
 
 interface IDropdown {
@@ -11,13 +11,15 @@ interface IDropdown {
 export const Dropdown = ({ visible, setVisible, role, setRole }: IDropdown) => {
 	const roles = ["Intern", "Manager", "Dev"];
 	const rolesToShow = roles.filter((r) => r !== role);
-	const dropdownRef = useRef(null); // Create a ref for the dropdown
+	const dropdownRef: RefObject<HTMLDivElement> = useRef(null); // Create a ref for the dropdown
 
 	useEffect(() => {
 		// Add a click event listener to the document
 		const handleClickOutside = (event: any) => {
-			if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+			if (dropdownRef.current) {
+			  if (!dropdownRef.current.contains(event.target)) {
 				setVisible(false); // Close the dropdown if the click is outside
+			  }
 			}
 		};
 

@@ -1,7 +1,7 @@
-from data.all_files import Meeting, FileData
-from faiss_db import FAISS_DB
-from text2summary import Text2Summary
 import os
+from app_package.data.all_files import Meeting, FileData
+from app_package.faiss_db import FAISS_DB
+from app_package.text2summary import Text2Summary
 
 
 def add_summaries_to_db(faiss_db: FAISS_DB, extractor: Text2Summary, meetings: list[Meeting]=[], file_data: list[FileData]=[]):

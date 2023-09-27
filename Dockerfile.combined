@@ -1,0 +1,33 @@
+# 1) Build the React FRONTEND
+FROM node:16-alpine as build-step-frontend
+
+WORKDIR /catalyst/frontend
+
+# Copy package.json and package-lock.json
+COPY frontend/package.json frontend/package-lock.json ./
+RUN npm install
+
+# Copy the rest of the frontend files
+COPY frontend .
+RUN npm run build
+
+# 2) Build the Flask BACKEND
+FROM python:3.9 as build-step-backend
+
+WORKDIR /catalyst/backend
+
+COPY backend .
+COPY .env .
+
+RUN pip install -r ./requirements.txt
+
+# Set the FLASK_APP environment variable to your app.py file
+ENV FLASK_APP app.py
+ENV FLASK_ENV production
+
+EXPOSE 8080
+
+# Copy the frontend build output into the Flask static directory
+COPY --from=build-step-frontend /catalyst/frontend/.next /catalyst/backend/static
+
+CMD ["flask", "run", "--host=0.0.0.0", "--port=8080"]

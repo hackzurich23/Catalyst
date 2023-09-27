@@ -2,9 +2,7 @@ import os
 from langchain.vectorstores import FAISS
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.schema.document import Document
-import typing as Dict
 from dotenv import load_dotenv
-
 
 
 class FAISS_DB:

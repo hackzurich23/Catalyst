@@ -61,7 +61,7 @@ export const ModalComponent = ({ isOpen, setIsOpen, data }: IModal) => {
 				{data.questions?.map((question, index) => {
 					return (
 						<div key={index} className={styles.box}>
-							<div className={styles.score}>{parseInt(scores[index] * 100)}%</div>
+							<div className={styles.score}>{(Number(scores?.[index] || 0) * 100).toFixed(2)}%</div>
 							<p className={styles.answer}>{data.answers?.[index]}</p>
 							<p className={styles.question}>{question}</p>
 							{data.type === "meeting" ? (
