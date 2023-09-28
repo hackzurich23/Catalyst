@@ -59,7 +59,7 @@ For proper deployment, run the following command from the ./frontend directory.
 
 The API can be accessed using the external ID of the VM followed by port `3000`.
 
-### Docker
+### Docker [experimental; TODO]
 
 Building the Docker container (combines frontend and backend):
 ```bash
@@ -68,5 +68,6 @@ docker build -f Dockerfile.combined -t catalyst-combined .
 
 Running the Docker images:
 ```bash
-docker run --rm -p 3000:3000 catalyst-combined
+docker run --rm -p 80:80 -p 8080:8080 catalyst-combined
 ```
+This command takes some time to run.
