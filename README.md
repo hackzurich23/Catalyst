@@ -39,7 +39,7 @@ For proper deployment, follow these steps:
 1. Activate the virtual environment (venv) with the following command:
 
    ```bash
-   cd project/timeline
+   cd project/Catalyst
    source myvenv/bin/activate
    ```
 

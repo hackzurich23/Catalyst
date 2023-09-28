@@ -11,3 +11,4 @@ Flask
 selenium
 requests
 PyPDF2
+dotenv
