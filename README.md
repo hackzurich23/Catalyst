@@ -6,6 +6,12 @@ Created during HackZurich 2023 (Sika Challenge). | [[Devpost](https://devpost.co
 
 Catalyst gathers and stores company data from PDFs, wikis and meeting transcriptions. It cleans the data and organizes knowledge into discrete facts. All these facts are stored in a **vector database**, enabling users to search for them using text queries. A ChatGPT-powered chat-bot comprehends user inquiries and formulates responses based on information from the database. We enhance transparency by offering detailed insights into how the chat bot generates responses, including the information from the database that was utilized and associated confidence scores.
 
+
+
+https://github.com/hackzurich23/Catalyst/assets/45896065/cb2a6741-0bf3-4a15-b86e-0646fbb840ba
+
+
+
 # Installation
 
 To set up the project, follow these steps:
